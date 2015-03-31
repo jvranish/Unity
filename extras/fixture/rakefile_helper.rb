@@ -7,7 +7,7 @@
 require 'yaml'
 require 'fileutils'
 require HERE+'../../auto/unity_test_summary'
-require HERE+'../../auto/generate_test_runner'
+require HERE+'../../auto/unity_generate_test_runner'
 require HERE+'../../auto/colour_reporter'
 
 module RakefileHelpers

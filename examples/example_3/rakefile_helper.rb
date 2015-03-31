@@ -1,7 +1,7 @@
 require 'yaml'
 require 'fileutils'
 require UNITY_ROOT+'/auto/unity_test_summary'
-require UNITY_ROOT+'/auto/generate_test_runner'
+require UNITY_ROOT+'/auto/unity_generate_test_runner'
 require UNITY_ROOT+'/auto/colour_reporter'
 
 module RakefileHelpers

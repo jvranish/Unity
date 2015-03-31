@@ -4,7 +4,7 @@
 #   [Released under MIT License. Please refer to license.txt for details]
 # ==========================================
 
-require '../auto/generate_test_runner.rb'
+require '../auto/unity_generate_test_runner.rb'
 
 TEST_FILE = 'testdata/testsample.c'
 TEST_MOCK = 'testdata/mocksample.c'
@@ -53,22 +53,22 @@ end
 
 should "GenerateARunnerByPullingYamlOptions" do
   subtest = 'yaml'
-  cmdstr = "ruby ../auto/generate_test_runner.rb testdata/sample.yml \"#{TEST_FILE}\" \"#{OUT_FILE + subtest + '.c'}\""
+  cmdstr = "ruby ../auto/unity_generate_test_runner.rb testdata/sample.yml \"#{TEST_FILE}\" \"#{OUT_FILE + subtest + '.c'}\""
   `#{cmdstr}`
   verify_output_equal(subtest)
 
-  cmdstr = "ruby ../auto/generate_test_runner.rb testdata/sample.yml \"#{TEST_MOCK}\" \"#{OUT_FILE + 'mock_' + subtest + '.c'}\""
+  cmdstr = "ruby ../auto/unity_generate_test_runner.rb testdata/sample.yml \"#{TEST_MOCK}\" \"#{OUT_FILE + 'mock_' + subtest + '.c'}\""
   `#{cmdstr}`
   verify_output_equal('mock_' + subtest)
 end
 
 should "GenerateARunnerByPullingCommandlineOptions" do
   subtest = 'cmd'
-  cmdstr = "ruby ../auto/generate_test_runner.rb -cexception \"#{TEST_FILE}\" \"#{OUT_FILE + subtest + '.c'}\""
+  cmdstr = "ruby ../auto/unity_generate_test_runner.rb -cexception \"#{TEST_FILE}\" \"#{OUT_FILE + subtest + '.c'}\""
   `#{cmdstr}`
   verify_output_equal(subtest)
 
-  cmdstr = "ruby ../auto/generate_test_runner.rb -cexception \"#{TEST_MOCK}\" \"#{OUT_FILE + 'mock_' + subtest + '.c'}\""
+  cmdstr = "ruby ../auto/unity_generate_test_runner.rb -cexception \"#{TEST_MOCK}\" \"#{OUT_FILE + 'mock_' + subtest + '.c'}\""
   `#{cmdstr}`
   verify_output_equal('mock_' + subtest)
 end
@@ -85,4 +85,4 @@ should "GenerateARunnerThatUsesParameterizedTests" do
   end
 end
 
-raise "There were #{$generate_test_runner_failures.to_s} failures while testing generate_test_runner.rb" if ($generate_test_runner_failures > 0)
+raise "There were #{$generate_test_runner_failures.to_s} failures while testing unity_generate_test_runner.rb" if ($generate_test_runner_failures > 0)

@@ -58,8 +58,8 @@ SYMBOLS=
 all: clean default
 
 default:
-#	ruby auto/generate_test_runner.rb test/TestProductionCode.c  test/test_runners/TestProductionCode_Runner.c
-#	ruby auto/generate_test_runner.rb test/TestProductionCode2.c test/test_runners/TestProductionCode2_Runner.c
+#	ruby auto/unity_generate_test_runner.rb test/TestProductionCode.c  test/test_runners/TestProductionCode_Runner.c
+#	ruby auto/unity_generate_test_runner.rb test/TestProductionCode2.c test/test_runners/TestProductionCode2_Runner.c
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1)
 	./$(TARGET1)
 

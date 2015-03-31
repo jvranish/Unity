@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #============================================================
 #  Author:   John Theofanopoulos
 #  A simple parser.   Takes the output files generated during the build process and
