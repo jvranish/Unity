@@ -6,7 +6,8 @@
 # ==========================================
 
 $QUICK_RUBY_VERSION = RUBY_VERSION.split('.').inject(0){|vv,v| vv * 100 + v.to_i }
-File.expand_path(File.join(File.dirname(__FILE__),'colour_prompt'))
+
+require 'colour_prompt'
 
 class UnityTestRunnerGenerator
 
@@ -18,7 +19,7 @@ class UnityTestRunnerGenerator
       when Hash     then @options.merge!(options)
       else          raise "If you specify arguments, it should be a filename or a hash of options"
     end
-    require "#{File.expand_path(File.dirname(__FILE__))}/type_sanitizer"
+    require 'type_sanitizer'
   end
 
   def self.default_options
